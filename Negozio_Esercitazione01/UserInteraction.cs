@@ -93,15 +93,15 @@ namespace Negozio_Esercitazione01
         }
         private static int CercaMenu()
         {
-            while (int.TryParse(Console.ReadLine(), out int result) && result >= 0 && result < 3)
+            int result;
+            do
             {
                 Console.WriteLine("MENU CERCA\n\nChe tipo di ricerca vuoi effettuare?");
                 Console.WriteLine("1. Cerca un prodotto alimentare per codice");
                 Console.WriteLine("2. Cerca un prodotto tecnologico per marca");
                 Console.WriteLine("\n0. Indietro");
-                return result;
-            }
-            return -1;
+            } while (int.TryParse(Console.ReadLine(), out result) && result >= 0 && result < 3)
+            return result;
         }
         private static void Visualizza()
         {
@@ -165,7 +165,8 @@ namespace Negozio_Esercitazione01
         }
         private static int VisualizzaMenu()
         {
-            while (int.TryParse(Console.ReadLine(), out int result) && result >= 0 && result <= 6)
+            int result;
+            do
             {
                 Console.WriteLine("MENU VISUALIZZAZIONE\n\nChe cosa vuoi visualizzare?");
                 Console.WriteLine("1. Tutti i prodotti");
@@ -175,9 +176,9 @@ namespace Negozio_Esercitazione01
                 Console.WriteLine("5. I prodotti alimentari in scadenza oggi");
                 Console.WriteLine("6. I prodotti alimentari che scadono tra meno di 3 giorni");
                 Console.WriteLine("\n0. Indietro");
-                return result;
-            }
-            return -1;
+                
+            } while (int.TryParse(Console.ReadLine(), out result) && result >= 0 && result <= 6) ;
+            return result;
         }
         private static void Add()
         {
@@ -263,15 +264,16 @@ namespace Negozio_Esercitazione01
         }
         private static int AddMenu()
         {
-            while (int.TryParse(Console.ReadLine(), out int result) && result >= 0 && result < 3)
+            int result;
+            do
             {
                 Console.WriteLine("MENU AGGIUNGI\n\nChe cosa vuoi aggiungere al catalogo?");
                 Console.WriteLine("1. Un prodotto alimentare");
                 Console.WriteLine("2. Un prodotto tecnologico");
                 Console.WriteLine("\n0. Indietro");
-                return result;
-            }
-            return -1;
+                
+            } while (int.TryParse(Console.ReadLine(), out result) && result >= 0 && result < 3) ;
+            return result;
         }
     }
 }
